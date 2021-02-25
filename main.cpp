@@ -9,7 +9,8 @@
 using namespace std;
 
 void gotoxy(int x,int y){
-    cout << 0x1B << y << x;
+    //cout << 0x1B << y << x ;
+    printf("%c[%d;%df",0x1B,y,x);
 }
 void clrscr(void){
     system("clear");
@@ -18,8 +19,8 @@ int main(){
     int x=50, y=10;
     clrscr();
     gotoxy(x,y);
-    printf("Typing Game\n");
+    cout << "Typing Game" << endl;
     //gotoxy(x,y);
-    printf("Today's Date\n");
+    cout << "Today's Date" << endl;
     return 0;
 }
