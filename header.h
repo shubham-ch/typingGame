@@ -1,5 +1,6 @@
 #include <iostream>
 #include <ctime>
+#include <conio.h>
 
 using namespace std;
 
