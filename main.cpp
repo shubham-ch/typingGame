@@ -1,10 +1,7 @@
 #include <iostream>
 #include <ctime>
-<<<<<<< HEAD
 #include <fstream>
-=======
 #include <conio.h>
->>>>>>> 17e46d3552313d49e45258a469d5b920e8eb4b2a
 
 #include "scoreCard.h"
 #include "help.h"
@@ -18,9 +15,6 @@ using namespace std;
 
 int main(){
     header();
-<<<<<<< HEAD
-    
-=======
     char name[20];
     int c = 0, ch;
     pos;
@@ -40,7 +34,6 @@ int main(){
     switch(ch){
         case 4: help(); break;
     }
->>>>>>> 17e46d3552313d49e45258a469d5b920e8eb4b2a
 }
 
 
