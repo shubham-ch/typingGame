@@ -1,7 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <fstream>
-#include <conio.h>
+//#include <conio.h>
 
 #include "scoreCard.h"
 #include "help.h"
