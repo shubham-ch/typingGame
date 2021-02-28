@@ -12,10 +12,10 @@
 using namespace std;
 
 #define pos gotoxy(50, 10)
+char name[20];
 
 int main(){
     header();
-    char name[20];
     int c = 0, ch;
     pos;
     if (c == 0){
@@ -32,7 +32,8 @@ int main(){
     cout << "6) Exit" << endl; pos;
     cin >> ch;
     switch(ch){
-        case 4: help(); break;
+        case 3: help(); break;
+        case 4: aboutUs(); break;
     }
 }
 

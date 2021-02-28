@@ -4,7 +4,7 @@
 
 using namespace std;
 
-void aboutMe(){
+void aboutUs(){
     header();
     int x=50, y=10;
     clrscr();

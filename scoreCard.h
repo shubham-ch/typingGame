@@ -1,4 +1,13 @@
-//
+#include <iostream>
+#include <fstream>
+#include <string>
+
+#include "header.h"
+
+using namespace std;
+
+char name1[20];
+
 void storeScore(int score, int speed, int level){
     int x=50, y=10;
     clrscr();
@@ -8,12 +17,12 @@ void storeScore(int score, int speed, int level){
     file.open("score.txt");
     if(file.is_open()){
         cout << endl;
-        file << "\nname = "name << "     " << "score = "score << "   " << "speed = "speed << "   " << "level ="level << endl;
+        file << "name =  " << name1 << "     " << "score = " << score << "   " << "speed = " << speed << "   " << "level =" << level << endl;
     }
     else{
         cout << "Error opening file" << endl;
     }
-    file.close;    
+    file.close();    
 }
 
 void printScore(){
@@ -22,15 +31,15 @@ void printScore(){
     clrscr();
     gotoxy(x,y);
 
-    string line;
-    ofstream file;
+    std::string line;
+    std::ifstream file;
     cout << ".......The scores are......... " << endl;
     file.open("score.txt");
     if(file.is_open()){
-        while(getline(file, line)){
+        while( getline (file,line) ){
             cout << line << '\n';
         }
-        file.close()
+        file.close();
     }
 
     else{
