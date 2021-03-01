@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+//#include <conio.h>
 
 #include "header.h"
 
@@ -23,6 +24,7 @@ void storeScore(int score, int speed, int level){
         cout << "Error opening file" << endl;
     }
     file.close();    
+    //getch(); main();
 }
 
 void printScore(){
