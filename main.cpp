@@ -27,12 +27,11 @@ int main(){
     cout << "2) Scorecard" << endl;
     cout << "3) Help" << endl;
     cout << "4) About us" << endl;
-    cout << "5) Log out" << endl;
-    cout << "6) Exit" << endl;
+    cout << "5) Exit" << endl;
     cin >> ch;
     switch(ch){
         //case 1: newGame(); break;
-        case 1: newGame(); break;
+        case 1: newGame(name); break;
         case 2: printScore(); break;
         case 3: help(); break;
         case 4: aboutUs(); break;
