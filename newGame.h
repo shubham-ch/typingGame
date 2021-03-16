@@ -23,6 +23,7 @@ void level(int mode, int points){
     clock_t begin;
     begin = clock();
     do{
+        time_spent = (int)(clock()-begin)/(CLOCKS_PER_SEC*60);
         int r[9];
         char compare[9];
         n = rand()%100;
@@ -38,7 +39,8 @@ void level(int mode, int points){
         for(j = 0; j < n; j++){
             cin >> compare[j];
         }
-    }while(time_spent = (int)(clock()-begin)/CLOCKS_PER_SEC);
+        
+    }while(time_spent >= rtime);
     
    
 }
