@@ -32,6 +32,7 @@ int main(){
     cout << "6) Exit" << endl; pos;
     cin >> ch;
     switch(ch){
+        //case 1: newGame(); break;
         case 3: help(); break;
         case 4: aboutUs(); break;
     }
