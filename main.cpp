@@ -16,6 +16,7 @@ char name[20];
 
 int main(){
     // header();
+    jmp:
     int c = 0, ch;
     if (c == 0){
         cout << "Enter user name::" << endl;
@@ -27,15 +28,16 @@ int main(){
     cout << "2) Scorecard" << endl;
     cout << "3) Help" << endl;
     cout << "4) About us" << endl;
-    cout << "5) Log out" << endl;
+    cout << "5) Back to main menu" << endl;
     cout << "6) Exit" << endl;
     cin >> ch;
     switch(ch){
         //case 1: newGame(); break;
-        case 1: newGame(); break;
+        case 1: newGame(name); break;
         case 2: printScore(); break;
         case 3: help(); break;
         case 4: aboutUs(); break;
+        case 5: goto jmp; break;
     }
 }
 

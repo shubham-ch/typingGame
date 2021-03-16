@@ -1,0 +1,2 @@
+name = amish     score = 84   speed = 100   level = 1
+name = shubham     score = 54   speed = 64   level = 2

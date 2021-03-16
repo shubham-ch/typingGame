@@ -15,9 +15,10 @@ using namespace std;
 //     }
 // }
 
-void level(int mode, int points){
+int level(std::string name, int mode){
     //header();
-    int rtime, time_spent, n; // n is random length for a word // rtime is timeduration for which game would run
+    int rtime, time_spent, n, j, par1, par2, vp = 0; // n is random length for a word // rtime is timeduration for which game would run
+    int points = 0;
     cout << "Enter the number of minutes you wanna play the game" << endl;
     cin >> rtime;
     clock_t begin;
@@ -31,21 +32,37 @@ void level(int mode, int points){
         cout << "Type the following code" << endl;
         for(int i=0; i<n; i++){
             r[i] = rand()%1000;
-            r[i] = r[i] % 26 + mode;
+            switch (mode){
+                case 1: par1 = 26, par2 = 97; break;
+                case 2: par1 = 56, par2 = 65; break;
+                case 3: par1 = 92, par2 = 32; break;
+            }
+            r[i] = r[i] % par1 + par2;
             cout << (char)r[i] ;
         }
         cout << endl;
-        int j=0, points = 0;
+        j=0;
         for(j = 0; j < n; j++){
             cin >> compare[j];
         }
-        
-    }while(time_spent >= rtime);
-    
-   
+        //compare[strlen(compare)-1];
+        for(j = 0; j < n; j++){
+            if(compare[j] == r[j]){
+                points++;
+                vp++;
+            }
+            else{
+                points--;
+            }
+        }
+        time_spent = (int)(clock()-begin)/(CLOCKS_PER_SEC*60);
+    }while(time_spent < rtime);
+    double speed = vp/time_spent;
+    storeScore(name, points, speed, mode);
+    return points;
 }
 
-void newGame() {
+void newGame(std::string name) {
     int bool1=0;
     //header();
     cout << "Please enter your difficulty level" << endl;
@@ -57,11 +74,12 @@ void newGame() {
     cin >> temp;
     do{
         switch (temp) {
-        case 1: level(65, points); break;
-        case 2: level(97, points); break;
-        case 3: level(120, points); break;
+        case 1: points = level(name, 1); break;
+        case 2: points = level(name, 2); break;
+        case 3: points = level(name, 3); break;
         //case 4: main(); break;
         default: bool1=1;
         }
     }while(bool1==1);
+    cout << "points: " << points << endl;
 }

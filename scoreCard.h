@@ -7,18 +7,18 @@
 
 using namespace std;
 
-char name1[20];
+//char name1[20];
 
-void storeScore(int score, int speed, int level){
+void storeScore(std::string name, int score, double speed, int level){
     // int x=50, y=10;
     // clrscr();
     // gotoxy(x,y);
 
     ofstream file;
-    file.open("score.txt");
+    file.open("score.txt", std::ios_base::app);
     if(file.is_open()){
         cout << endl;
-        file << "name =  " << name1 << "     " << "score = " << score << "   " << "speed = " << speed << "   " << "level =" << level << endl;
+        file << "name = " << name << "     " << "score = " << score << "   " << "speed = " << speed << "   " << "level = " << level << endl;
     }
     else{
         cout << "Error opening file" << endl;
