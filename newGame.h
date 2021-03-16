@@ -7,23 +7,25 @@ using namespace std;
 void timeDuration(int time){
     int time_spent;
     clock_t begin;
+    begin = clock();
     time_spent = (int)(clock()-begin)/CLOCKS_PER_SEC;
     if (time_spent >= time){
-        storeScore();
+        //storeScore(score, speed, level);
         printScore();
-        break;
+        //goto jmp; 
     }
+    //jmp:
 }
 
-void level(int mode){
+void level(int mode, int points){
     //header();
     int rtime, n; // n is random length for a word // rtime is timeduration for which game would run
     cout << "Enter the number of minutes you wanna play the game" << endl;
-    cin >> rtime >> endl;
+    cin >> rtime;
     while(1){
         timeDuration(rtime);
         int r[9];
-        char compare;
+        char compare[9];
         n = rand()%100;
         n = n % 10;
         cout << "Type the following code" << endl;
@@ -33,33 +35,43 @@ void level(int mode){
             cout << (char)r[i] ;
         }
         cout << endl;
-        int j=0;
-        do{
-            cin >> compare;
-            j++;
-        }while((compare == r[j]) && (j < n));
+        int j=0, points=0;
+        // do{
+        
+        //     cin >> compare;
+        //     j++;
+        // }while((compare == r[j]) && (j < n));
+
+        for(int k; k<n; k++){
+            cin >> compare[j];
+        }
+        for(j=0; j<n; j++){
+            while(compare[j]==r[j]){
+                points++;
+            }
+        }
     }
     
    
 }
 
 void newGame() {
-    int bool=0;
+    int bool1=0;
     //header();
     cout << "Please enter your difficulty level" << endl;
     cout << "1. Easy" << endl;
     cout << "2. Medium" << endl;
     cout << "3. Hard" << endl;
     cout << "4. Back to main menu" << endl;
-    int temp;
-    cin >> temp >> endl;
+    int temp, points;
+    cin >> temp;
     do{
         switch (temp) {
-        case 1: level(65); break;
-        case 2: level(97); break;
-        case 3: level(120); break;
-        case 4: main(); break;
-        default: bool=1;
+        case 1: level(65, points); break;
+        case 2: level(97, points); break;
+        case 3: level(120, points); break;
+        //case 4: main(); break;
+        default: bool1=1;
         }
-    }while(bool=1)
+    }while(bool1==1);
 }

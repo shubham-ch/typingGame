@@ -21,7 +21,7 @@ int main(){
         cout << "Enter user name::" << endl;
         cin >> name;
     }
-    c++; pos;
+    c++;
     cout << "****Main Menu****\n" << endl;
     cout << "1) New game" << endl;
     cout << "2) Scorecard" << endl;
@@ -33,7 +33,7 @@ int main(){
     switch(ch){
         //case 1: newGame(); break;
         case 1: newGame(); break;
-        case 2: scoreCard(); break;
+        case 2: printScore(); break;
         case 3: help(); break;
         case 4: aboutUs(); break;
     }
