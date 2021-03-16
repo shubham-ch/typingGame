@@ -52,7 +52,7 @@ void newGame() {
     cout << "3. Hard" << endl;
     cout << "4. Back to main menu" << endl;
     int temp, points;
-    cin >> temp >> endl;
+    cin >> temp;
     do{
         switch (temp) {
         case 1: level(65, points); break;
