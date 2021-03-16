@@ -1,13 +1,13 @@
 #include <iostream>
 //#include <conio.h>
 
-#include "header.h"
+// #include "header.h"
 
 using namespace std;
 
 void help(){
-    header();
-    gotoxy(50, 10);
+    // header();
+    // gotoxy(50, 10);
     cout << "*********Rules of Typing Game*********" << endl;
     cout << "1) Enter a name as user name" << endl;
     cout << "2) Select difficulty" << endl;
